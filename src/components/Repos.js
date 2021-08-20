@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { GithubContext } from '../context/context';
-import { ExampleChart, Pie3D, Column3D, Bar3D, Doughnut2D } from './Charts';
+import { Pie3D, Column3D, Bar3D, Doughnut2D } from './Charts';
 const Repos = () => {
   const {repos} = React.useContext(GithubContext)
   const languages = repos.reduce((total, item) => {
@@ -35,21 +35,6 @@ const Repos = () => {
 
   stars = Object.values(stars).slice(-5).reverse()
   forks = Object.values(forks).slice(-5).reverse()
-
-  const chartData = [
-    {
-      label: "HTML",
-      value: "13"
-    },
-    {
-      label: "CSS",
-      value: "160"
-    },
-    {
-      label: "Javascript",
-      value: "80"
-    },
-  ];
 
   return <section className="section">
     <Wrapper className="section-center">
