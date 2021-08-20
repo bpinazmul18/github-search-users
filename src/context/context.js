@@ -27,6 +27,25 @@ const GithubProvider = ({ children }) => {
       const response = await axios.get(`${rootUrl}/users/${user}`)
       if (response) {
         setGithubUser(response.data)
+        const {login, followers_url} = response.data
+        // Repos
+        try {
+          const res = await axios.get(`${rootUrl}/users/${login}/repos?per_page=100`)
+          if (res) {
+            setRepos(res.data)
+          }
+        } catch (err) {
+          console.log('test')
+        }
+        // Followers
+        try {
+          const res = await axios.get(`${followers_url}?per_page=100`)
+          if (res) {
+            setFollowers(res.data)
+          }
+        } catch (err) {
+          console.log('test')
+        }
       }
       checkRequest()
       setIsLoading(false)
