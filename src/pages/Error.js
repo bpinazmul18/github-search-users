@@ -14,10 +14,14 @@ const Error = () => {
 };
 const Wrapper = styled.section`
   min-height: 100vh;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  //display: grid;
+  //place-items: center;
   background: var(--clr-primary-10);
-  text-align: center;
+  //text-align: center;
   h1 {
     font-size: 10rem;
   }

@@ -7,9 +7,9 @@ function App() {
     <Router>
       <Switch>
         <Route path="/" exact={true}>
-          <Dashboard></Dashboard>
+          <Dashboard/>
         </Route>
-        <Route path="/login" exact={true}>
+        <Route path="/login">
           <Login />
         </Route>
         <Route path="*">
