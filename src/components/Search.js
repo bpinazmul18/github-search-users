@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { MdSearch } from 'react-icons/md';
 import { GithubContext } from '../context/context';
 const Search = () => {
-  const [user, setUser] = React.useState('')
+  const [user, setUser] = React.useState('bpinazmul18')
   const { request, error, searchGithubUser, isLoading } = React.useContext(GithubContext)
 
   const handleSubmit = (e) => {
@@ -11,7 +11,7 @@ const Search = () => {
     if (user) {
       // More logic coming soon
       searchGithubUser(user)
-      setUser('')
+      // setUser('')
     }
   }
   return <section className="section">
